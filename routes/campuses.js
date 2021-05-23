@@ -35,7 +35,7 @@ router.delete('/:id', function (req, res, next) {
 
 /******************* EDIT *********************/
 router.put('/:id', ash(async (req, res) => {
-  await Student.update(req.body,
+  await Campus.update(req.body,
     { where: { id: req.params.id } }
   );
   let campus = await Campus.findByPk(req.params.id);
