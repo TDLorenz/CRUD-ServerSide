@@ -11,7 +11,10 @@ const Campus = db.define("campus", {
 
   imageUrl: {
     type:Sequelize.STRING,
-    defaultValue:'http://www.hunter.cuny.edu/facilities/pressroom/homepage/thomas-hunter-hall-main-campus/image'
+    defaultValue:'http://www.hunter.cuny.edu/facilities/pressroom/homepage/thomas-hunter-hall-main-campus/image',
+    validate: {
+      isURL: true
+    }
   },
 
   address: {
