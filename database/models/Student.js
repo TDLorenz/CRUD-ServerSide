@@ -24,7 +24,11 @@ const Student = db.define("student", {
   }, 
   imageUrl: {
     type: Sequelize.STRING,
-    defaultValue:'https://dirtywatermedia.com/wp-content/uploads/2018/02/College-Student-Thumbs-Up-e1440734712137.jpg'
+    defaultValue:'https://dirtywatermedia.com/wp-content/uploads/2018/02/College-Student-Thumbs-Up-e1440734712137.jpg',
+    validate: {
+      isURL: true
+    }
+
   },
   gpa: {
     type: Sequelize.DECIMAL,
